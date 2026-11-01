@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    command: uvicorn water_monitoring.api:app --host 0.0.0.0 --port 8000
+    environment:
+      WATER_DB_PATH: /app/data/water_plant.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - water-data:/app/data
+  dashboard:
+    build: .
+    command: streamlit run water_monitoring/dashboard.py --server.address 0.0.0.0 --server.port 8501
+    environment:
+      WATER_API_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+volumes:
+  water-data:
