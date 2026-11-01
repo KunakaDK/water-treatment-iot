@@ -127,10 +127,6 @@ Example POST payload:
 pytest -q
 ```
 
-## Suggested CV description (only after running and verifying the project)
-
-**Prototype de supervision IoT d'une station de traitement d'eau (données simulées)** – Développement d'une chaîne de monitoring intégrant génération de télémétrie, validation des mesures, API FastAPI, stockage SQLite et tableau de bord Streamlit pour le suivi des débits, pressions, niveaux, pH, turbidité, alarmes et consommation énergétique spécifique indicative.
-
 ## Engineering notes
 
 - All synthetic process ranges and alarm thresholds are illustrative, not normative.
